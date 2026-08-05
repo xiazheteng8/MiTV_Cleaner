@@ -114,7 +114,7 @@ EmotnUI.apk
 
 ### 4. Projectivy Launcher
 
-推荐使用。
+不推荐使用，部分电视不支持，可能导致开机卡MI。
 
 支持：
 
