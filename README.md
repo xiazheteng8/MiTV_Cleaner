@@ -363,7 +363,7 @@ adb shell cmd package install-existing 包名
 
 adb shell cmd package install-existing com.mitv.tvhome
 
-简单粗暴：设置——更多
+简单粗暴：设置——通用设置——还原——立即还原
 
 
 ---
