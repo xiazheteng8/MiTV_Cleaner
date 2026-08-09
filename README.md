@@ -1,6 +1,6 @@
 # 📺 Android TV Clean Tool
 
-## 安卓电视 ADB 一键精简工具 v2.0
+## 安卓电视 ADB 一键精简工具 v1.1
 
 > by **瞎折腾吧**
 >
