@@ -1,17 +1,21 @@
 # 📺 Android TV Clean Tool
 
-## 安卓电视 ADB 一键精简工具
+## 安卓电视 ADB 一键精简工具 v2.0
 
 > by **瞎折腾吧**
 >
 > YouTube：@xiazheteng8
 
 
+<p align="center">
+
 一键连接 Android TV  
 智能检测系统  
 安装第三方桌面  
 精简预装应用  
 恢复出厂设置
+
+</p>
 
 
 ---
@@ -92,7 +96,7 @@ Android TV Clean Tool
 # 🚀 功能介绍
 
 
-## TV_Clean.bat
+## TV_Clean
 
 ### 安卓电视一键精简
 
@@ -124,7 +128,7 @@ Android TV Clean Tool
 
 ---
 
-## TV_Scan.bat
+## TV_Scan
 
 ### 安卓电视信息检测工具
 
@@ -162,7 +166,7 @@ AndroidTV_Info.txt
 
 ---
 
-## TV_Reset.bat
+## TV_Reset
 
 ### 安卓电视恢复出厂辅助
 
@@ -195,7 +199,7 @@ Yes
 Reboot system now
 
 ```
-如已经无法进入电视系统，请自行查找通过遥控器进入recovery的方式，双清或者恢复出厂即可
+
 
 ---
 
@@ -407,6 +411,7 @@ Android TV 学习、研究及系统优化。
 
 
 **瞎折腾吧**
+
 
 YouTube:
 
