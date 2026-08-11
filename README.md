@@ -1,12 +1,17 @@
-<img width="256" height="256" alt="Gemini_Generated_Image_3n6vn83n6vn83n6v 拷贝" src="https://github.com/user-attachments/assets/772d3c31-2b19-40c4-affa-ef1d9daee086" />
 
+<div align="center">
+
+![GitHub stars](https://img.shields.io/github/stars/xiazheteng8/MiTV_Cleaner)
+![GitHub license](https://img.shields.io/github/license/xiazheteng8/MiTV_Cleaner)
+
+</div>
 <div align="center">
 
 # AndroidTV Cleaner
 
 ### Universal Android TV Optimization Tool
 
-基于 ADB 的安卓电视应用管理与系统优化工具
+<img width="256" height="256" alt="Gemini_Generated_Image_3n6vn83n6vn83n6v 拷贝" src="https://github.com/user-attachments/assets/772d3c31-2b19-40c4-affa-ef1d9daee086" />基于 ADB 的安卓电视应用管理与系统优化工具
 
 
 [![Watch Demo](https://img.youtube.com/vi/dgmyJgCuBaQ/hqdefault.jpg)](https://youtu.be/dgmyJgCuBaQ)
