@@ -1,3 +1,31 @@
+<div align="center">
+
+![GitHub stars](https://img.shields.io/github/stars/xiazheteng8/MiTV_Cleaner)
+![GitHub license](https://img.shields.io/github/license/xiazheteng8/MiTV_Cleaner)
+
+</div>
+<div align="center">
+
+# AndroidTV Cleaner
+
+### 安卓电视 ADB 自动化优化工具
+
+<p align="center">
+  <a href="https://youtu.be/dgmyJgCuBaQ">
+    <img src="https://img.youtube.com/vi/dgmyJgCuBaQ/maxresdefault.jpg" width="850">
+  </a>
+</p>
+
+<p align="center">
+  支持安卓电视应用扫描、自定义精简、第三方桌面安装、APK批量部署
+</p>
+
+</div>
+
+
+## ✨ 功能特点
+
+AndroidTV Cleaner 是一款基于 ADB 的安卓电视优化工具。
 ##功能介绍
 这是工具介绍
 这是第二行
