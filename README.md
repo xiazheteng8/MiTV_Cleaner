@@ -1,3 +1,4 @@
+![Uploading Gemini_Generated_Image_3n6vn83n6vn83n6v 拷贝.png…]()
 <div align="center">
 
 # AndroidTV Cleaner
