@@ -6,17 +6,17 @@
 </div>
 <div align="center">
 
-# AndroidTV Cleaner<img width="1378" height="1378" alt="Gemini_Generated_Image_3n6vn83n6vn83n6v" src="https://github.com/user-attachments/assets/30dc7dce-ab69-4aea-b78f-57ca23a1122e" />
+# AndroidTV Cleaner<img width="256" height="256" alt="Gemini_Generated_Image_3n6vn83n6vn83n6v 拷贝" src="https://github.com/user-attachments/assets/25c56187-bf51-42a1-90ff-67a1d277af45" />
+
 
 
 ### 安卓电视 ADB 自动化优化工具
 
 <p align="center">
   <a href="https://youtu.be/dgmyJgCuBaQ">
-    <img src="https://img.youtube.com/vi/dgmyJgCuBaQ/hqdefault.jpg" width="850">
+    <img src="https://i.ytimg.com/vi/dgmyJgCuBaQ/hqdefault.jpg" width="850">
   </a>
 </p>
-
 
 ## ✨ 功能特点
 
