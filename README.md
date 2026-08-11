@@ -1,165 +1,297 @@
-项目Logo/标题
+<div align="center">
 
-一句话定位
+# AndroidTV Cleaner
 
-演示视频
+### Universal Android TV Optimization Tool
 
-功能亮点
-
-为什么需要它
-
-核心功能
-
-运行流程
-
-支持设备
-
-使用教程
-
-配置说明
-
-贡献方式
-
-免责声明
-而不是从“项目介绍”开始。
-高级版应该类似这样：
-AndroidTV Cleaner
-Universal Android TV Optimization Tool
-一个基于 ADB 的安卓电视管理工具，通过智能扫描、自定义配置和模块化方案，实现属于自己的电视系统环境。
-
-[▶ 查看演示视频]
-✨ Features
-🔍 Smart Scanner
-自动分析电视应用环境：
-Application Name
-Package Name
-APK Location
-Application Information
-生成完整设备分析报告。
-🧩 Custom Optimization
-不再依赖固定品牌规则。
-通过扫描结果：
-创建个人配置
-自定义保留内容
-调整优化范围
-保存设备方案
-让每台电视都有自己的配置。
-🛡 Multi-Level Optimization
-模式	适合用户	说明
-Standard	普通用户	日常优化
-Advanced	高级用户	深度调整
-Launcher	个性化用户	桌面替换
+基于 ADB 的安卓电视应用管理与系统优化工具
 
 
-🚀 Launcher Deployment
-快速部署第三方桌面：
-当贝桌面
-ATV Launcher
-Emotn UI
-Projectivy Launcher
-打造更加简洁、高效的电视主页。
-📦 Application Deployment
-支持 APK 批量部署：
-APPS/
- ├── YouTube.apk
- ├── Player.apk
- └── Tools.apk
-一次操作完成电视初始化。
-🎯 Why AndroidTV Cleaner?
-很多安卓电视随着使用时间增加，会出现：
-首页信息过载
-应用越来越多
-系统资源占用增加
-操作体验下降
-AndroidTV Cleaner 提供一种更灵活的方式：
-让电视回归用户真正需要的功能。
+[![Watch Demo](https://img.youtube.com/vi/dgmyJgCuBaQ/hqdefault.jpg)](https://youtu.be/dgmyJgCuBaQ)
 
-🔄 Workflow
-Connect TV
-    ↓
-Scan Applications
-    ↓
-Generate Configuration
-    ↓
-Customize Rules
-    ↓
-Apply Optimization
-    ↓
-Install Applications
-📺 Supported Devices
-理论支持所有：
-Android TV
-AOSP TV
-Android TV Box
-已测试方向：
-Xiaomi TV
-Hisense TV
-TCL TV
-Skyworth TV
-Konka TV
+
+<p>
+支持应用扫描、自定义配置、分级优化、第三方桌面安装以及 APK 批量部署
+</p>
+
+</div>
+
+
+---
+
+## 📺 项目介绍
+
+AndroidTV Cleaner 是一款基于 Android ADB 调试功能开发的电视优化工具。
+
+通过连接电视设备，自动分析当前应用环境，并生成对应配置文件。
+
+相比传统固定列表方式，新版本采用：
+
+- 自动扫描
+- 应用解析
+- 自定义配置
+- 分级处理
+
+让不同品牌、不同系统版本的安卓电视都可以拥有属于自己的优化方案。
+
+
+---
+
+# ✨ Features
+
+
+## 🔍 Smart Scanner
+
+自动获取电视应用信息：
+
+- 应用名称
+- Package Name
+- APK 路径
+
+
+生成完整扫描结果，方便用户分析设备环境。
+
+
+---
+
+## 🧩 Custom Configuration
+
+根据扫描结果创建专属配置：
+
+- 普通优化列表
+- 深度优化列表
+- 桌面优化列表
+- 保护组件列表
+
+
+用户可以自由决定：
+
+- 保留哪些功能
+- 调整哪些应用
+- 创建个人电视方案
+
+
+---
+
+## 🛡 Multi-Level Optimization
+
+
+| 模式 | 适合用户 | 说明 |
+| --- | --- | --- |
+| 普通优化 | 普通用户 | 日常系统整理 |
+| 深度优化 | 高级用户 | 更多应用调整 |
+| 桌面优化 | 个性用户 | 替换默认桌面 |
+
+
+---
+
+## 🖥 Launcher Support
+
+支持安装：
+
+- 当贝桌面
+- ATV Launcher
+- Emotn UI
+- Projectivy Launcher
+
+
+打造更加简洁的电视首页。
+
+
+---
+
+## 📦 APK Batch Install
+
+将 APK 文件放入：
+
+APPS
+
+工具会自动识别并批量安装。
+
+
+适用于：
+
+- 新电视初始化
+- 恢复环境
+- 快速部署软件
+
+
+---
+
+# 🚀 使用流程
+
+
+连接电视
+↓
+扫描应用
+↓
+生成配置
+↓
+自定义列表
+↓
+执行优化
+↓
+安装应用
+
+
+---
+
+# 📺 Supported Devices
+
+
+理论支持：
+
+- 小米电视
+- 海信电视
+- TCL电视
+- 创维电视
+- 康佳电视
+- 长虹电视
+- 安卓电视盒子
+- 其他 Android TV 设备
+
+
 设备要求：
-✔ Android系统
-✔ ADB调试权限  
-📂 Project Structure
-AndroidTV_Cleaner
 
-├── TV助手.bat
+- Android 系统
+- 支持 ADB 调试
+- 允许应用管理
 
-├── APPS
-│   └── apk files
 
-├── Config
-│   ├── normal.conf
-│   ├── deep.conf
-│   ├── launcher.conf
-│   └── protect.conf
+---
 
-├── Result
-│   └── scan_result.txt
+# 📂 Project Structure
 
-└── README.md
-🏁 Getting Started
-Enable ADB
-开启电视：
-设置 → 关于本机 → 系统版本
-连续点击确认键。
-打开：
-ADB Debugging
-Unknown Sources
-Connect Device
-输入电视 IP：
-192.168.x.x
-电视确认授权即可。
-🧰 Community Configuration
-由于不同品牌电视存在差异：
-系统版本不同
-软件包不同
-厂商服务不同
-项目未来希望由社区共同维护：
+
+
+- TV助手.bat
+- APPS
+  - APK 文件
+- Config
+  - normal.txt
+  - deep.txt
+  - launcher.txt
+  - protect.txt
+- Result
+  - scan_result.txt
+- README.md
+
+
+---
+
+# 🏁 Getting Started
+
+
+## 1. 开启 ADB 调试
+
+
+电视设置：
+
+设置
+→ 关于本机
+→ 系统版本
+
+
+连续点击确认键开启开发者模式。
+
+
+开启：
+
+- ADB 调试
+- 未知来源应用安装
+
+
+---
+
+## 2. 连接电视
+
+
+查看电视 IP：
+
+网络设置
+→ 网络详情
+
+
+输入 IP 地址即可连接。
+
+
+---
+
+# 🤝 Community Configuration
+
+
+不同品牌电视存在：
+
+- 系统版本差异
+- 软件包差异
+- 厂商服务差异
+
+
+个人无法长期维护全部品牌配置。
+
+
+因此希望社区共同完善：
+
+
 Brand
- ├── Model
- │    ├── Scan Result
- │    └── Optimization Profile
+ └── Model
+  ├── Scan Result
+
+  └── Optimization Profile
+
+
 欢迎提交：
-扫描结果
-测试报告
-配置文件
+
+- 电视型号
+- 扫描结果
+- 测试情况
+- 配置文件
+
+
 帮助更多设备加入支持列表。
-📌 Final Version
+
+
+---
+
+# 📌 Final Version
+
+
 AndroidTV Cleaner v2.0
+
+
 当前版本为功能规划下的最终版本。
+
+
 后续重点：
-不是增加更多代码功能，
-而是完善：
-品牌支持
-配置文件
-用户反馈
-⚠️ Disclaimer
+
+- 完善品牌配置
+- 增加设备支持
+- 收集用户反馈
+
+
+而不是继续增加核心功能。
+
+
+---
+
+# ⚠️ Disclaimer
+
+
+使用前请：
+
+- 保存扫描结果
+- 了解应用作用
+- 谨慎调整系统组件
+
+
 本工具不会修改系统分区。
-使用前请确认：
-已保存扫描结果
-了解操作影响
-谨慎处理系统组件
-⭐ Support
-如果项目对你有帮助：
-欢迎 Star ⭐
+
+
+---
+
+# ⭐ Support
+
+
+如果项目帮助到了你：
+
+欢迎 Star ⭐ 支持。
