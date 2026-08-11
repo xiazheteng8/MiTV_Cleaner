@@ -14,7 +14,18 @@
 <img width="256" height="256" alt="Gemini_Generated_Image_3n6vn83n6vn83n6v 拷贝" src="https://github.com/user-attachments/assets/772d3c31-2b19-40c4-affa-ef1d9daee086" />基于 ADB 的安卓电视应用管理与系统优化工具
 
 
-[![Watch Demo](https://img.youtube.com/vi/dgmyJgCuBaQ/hqdefault.jpg)](https://youtu.be/dgmyJgCuBaQ)
+<div align="center">
+
+# AndroidTV Cleaner
+
+安卓电视 ADB 优化工具
+
+
+[![AndroidTV Cleaner 视频演示](https://img.youtube.com/vi/F5YhsMLjae8/maxresdefault.jpg)](https://youtu.be/F5YhsMLjae8)
+
+点击图片观看视频演示
+
+</div>
 
 
 <p>
