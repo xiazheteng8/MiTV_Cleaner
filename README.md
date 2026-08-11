@@ -6,21 +6,16 @@
 </div>
 <div align="center">
 
-# AndroidTV Cleaner
+# AndroidTV Cleaner<img width="1378" height="1378" alt="Gemini_Generated_Image_3n6vn83n6vn83n6v" src="https://github.com/user-attachments/assets/30dc7dce-ab69-4aea-b78f-57ca23a1122e" />
+
 
 ### 安卓电视 ADB 自动化优化工具
 
 <p align="center">
   <a href="https://youtu.be/dgmyJgCuBaQ">
-    <img src="https://img.youtube.com/vi/dgmyJgCuBaQ/maxresdefault.jpg" width="850">
+    <img src="https://img.youtube.com/vi/dgmyJgCuBaQ/hqdefault.jpg" width="850">
   </a>
 </p>
-
-<p align="center">
-  支持安卓电视应用扫描、自定义精简、第三方桌面安装、APK批量部署
-</p>
-
-</div>
 
 
 ## ✨ 功能特点
