@@ -7,7 +7,7 @@
 </div>
 <div align="center">
 
-# AndroidTV Cleaner
+# SmartTV-Toolkit
 
 ### Universal Android TV Optimization Tool
 
@@ -16,7 +16,7 @@
 
 <div align="center">
 
-# AndroidTV Cleaner
+# SmartTV-Toolkit
 
 安卓电视 ADB 优化工具
 
@@ -45,7 +45,7 @@
 
 ## 📺 项目介绍
 
-AndroidTV Cleaner 是一款基于 Android ADB 调试功能开发的电视优化工具。
+SmartTV-Toolkit 是一款基于 Android ADB 调试功能开发的电视优化工具。
 
 通过连接电视设备，自动分析当前应用环境，并生成对应配置文件。
 
@@ -286,7 +286,7 @@ Brand
 # 📌 版本发布声明
 
 
-AndroidTV Cleaner v2.0
+SmartTV-Toolkit正式版
 
 
 当前版本为功能规划下的最终版本。
