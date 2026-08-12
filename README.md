@@ -61,10 +61,10 @@ AndroidTV Cleaner 是一款基于 Android ADB 调试功能开发的电视优化�
 
 ---
 
-# ✨ Features
+# ✨ 功能介绍
 
 
-## 🔍 Smart Scanner
+## 🔍 深度扫描应用列表
 
 自动获取电视应用信息：
 
@@ -78,7 +78,7 @@ AndroidTV Cleaner 是一款基于 Android ADB 调试功能开发的电视优化�
 
 ---
 
-## 🧩 Custom Configuration
+## 🧩 生成精简列表配置
 
 根据扫描结果创建专属配置：
 
@@ -109,7 +109,7 @@ AndroidTV Cleaner 是一款基于 Android ADB 调试功能开发的电视优化�
 
 ---
 
-## 🖥 Launcher Support
+## 🖥 桌面替换
 
 支持安装：
 
@@ -124,7 +124,7 @@ AndroidTV Cleaner 是一款基于 Android ADB 调试功能开发的电视优化�
 
 ---
 
-## 📦 APK Batch Install
+## 📦 软件安装
 
 将 APK 文件放入：
 
@@ -160,7 +160,7 @@ APPS
 
 ---
 
-# 📺 Supported Devices
+# 📺 支持设备
 
 
 理论支持：
@@ -184,26 +184,32 @@ APPS
 
 ---
 
-# 📂 Project Structure
+# 📂 文件架构
 
 
 
-- TV助手.bat
+- TV助手.exe
+- adb.exe
 - APPS
-  - APK 文件
-- Config
+  - app.apk
+- brands
   - normal.txt
   - deep.txt
   - launcher.txt
   - protect.txt
-- Result
-  - scan_result.txt
+- scan
+  - 扫描结果.txt
+- Config.ini
+- Launcher
+  -Launcher.apk
+- tool
+  -工具
 - README.md
 
 
 ---
 
-# 🏁 Getting Started
+# 🏁 使用条件
 
 
 ## 1. 开启 ADB 调试
@@ -241,7 +247,7 @@ APPS
 
 ---
 
-# 🤝 Community Configuration
+# 🤝 维护说明
 
 
 不同品牌电视存在：
@@ -277,7 +283,7 @@ Brand
 
 ---
 
-# 📌 Final Version
+# 📌 版本发布声明
 
 
 AndroidTV Cleaner v2.0
@@ -298,7 +304,7 @@ AndroidTV Cleaner v2.0
 
 ---
 
-# ⚠️ Disclaimer
+# ⚠️ 危险提示
 
 
 使用前请：
@@ -313,7 +319,7 @@ AndroidTV Cleaner v2.0
 
 ---
 
-# ⭐ Support
+# ⭐ 感谢支持
 
 
 如果项目帮助到了你：
