@@ -20,13 +20,19 @@
 
 安卓电视 ADB 优化工具
 
+## 🎬 视频演示
 
-[![AndroidTV Cleaner 视频演示](https://img.youtube.com/vi/F5YhsMLjae8/maxresdefault.jpg)](https://youtu.be/F5YhsMLjae8)
+<div align="center">
 
-点击图片观看视频演示
+点击下方图片观看完整演示视频：
+
+<a href="https://youtu.be/F5YhsMLjae8">
+
+<img src="https://raw.githubusercontent.com/xiazheteng8/MiTV_Cleaner/main/Video%20Thumbnail.png" width="800">
+
+</a>
 
 </div>
-
 
 <p>
 支持应用扫描、自定义配置、分级优化、第三方桌面安装以及 APK 批量部署
