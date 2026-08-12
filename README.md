@@ -201,9 +201,9 @@ APPS
   - 扫描结果.txt
 - Config.ini
 - Launcher
-  -Launcher.apk
+  - Launcher.apk
 - tool
-  -工具
+  - 工具
 - README.md
 
 
