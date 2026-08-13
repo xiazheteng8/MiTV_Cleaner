@@ -319,7 +319,8 @@ SmartTV-Toolkit正式版
 
 ---
 
-# ⭐ 感谢支持
+# ⭐ 维护不易！<img width="1708" height="2560" alt="62f5b77144ee3a43446d735a981cc980" src="https://github.com/user-attachments/assets/fde9c9eb-1fa7-4930-9114-2a9e7fc0cc68" />
+感谢支持
 
 
 如果项目帮助到了你：
