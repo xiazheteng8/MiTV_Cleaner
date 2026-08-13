@@ -2,11 +2,14 @@
 
 cd /d "%~dp0.."
 
+set ROOT=%cd%
+
+set CONFIG=%ROOT%\config.ini
+
 setlocal EnableDelayedExpansion
 
 chcp 936 >nul
-
-title 瞎折腾吧 - 安卓电视扫描工具 v2.0
+title 瞎折腾吧 - 安卓电视扫描工具 v2.1
 
 
 color 0A
@@ -28,7 +31,7 @@ echo =====================================
 echo.
 echo          瞎折腾吧
 echo.
-echo       安卓电视扫描工具 v2.0
+echo       安卓电视扫描工具 v2.1
 echo.
 echo       快速扫描 + aapt深度解析
 echo.
@@ -55,19 +58,27 @@ exit /b
 
 )
 
+:: =====================================
+:: 读取配置
+:: =====================================
+
+set IP=
+set PORT=
 
 
-for /f "tokens=2 delims==" %%a in (config.ini) do (
+for /f "tokens=1,* delims==" %%a in ('type "%CONFIG%"') do (
 
-set IP=%%a
+    if /i "%%a"=="IP" set IP=%%b
+
+    if /i "%%a"=="PORT" set PORT=%%b
 
 )
 
 
 
-echo 当前电视IP：
+echo 当前电视：
 
-echo %IP%
+echo %IP%:%PORT%
 
 
 echo.
@@ -76,23 +87,37 @@ echo.
 echo 正在连接电视...
 
 
-adb connect %IP%:5555 >nul
+adb disconnect >nul 2>&1
 
 
-timeout /t 3 >nul
+timeout /t 1 >nul
+
+
+adb connect %IP%:%PORT% >nul 2>&1
+
+
+timeout /t 5 >nul
 
 
 adb devices >scan\devices.txt
 
 
 
-findstr "%IP%" scan\devices.txt | findstr "device" >nul
+findstr "%IP%:%PORT%" scan\devices.txt | findstr /r "device$" >nul
 
 
 if errorlevel 1 (
 
 echo.
+
 echo ADB连接失败
+
+echo.
+
+echo 当前ADB状态：
+
+type scan\devices.txt
+
 echo.
 
 pause
@@ -100,7 +125,6 @@ pause
 goto START
 
 )
-
 
 
 cls

@@ -1,0 +1,2 @@
+ca.dstudio.atvlauncher.free
+com.konka.livelauncher

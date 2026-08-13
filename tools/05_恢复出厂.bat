@@ -1,13 +1,11 @@
 @echo off
 
-cd /d "%~dp0.."
-
 chcp 936 >nul
 
 setlocal EnableDelayedExpansion
 
 
-title 瞎折腾吧 - 安卓电视恢复出厂助手 v2.0
+title 瞎折腾吧 - 安卓电视恢复出厂助手 v2.1
 
 
 color 0A
@@ -15,17 +13,43 @@ color 0A
 
 
 :: =====================================
-:: 读取配置
+:: 返回根目录
 :: =====================================
 
 
-if not exist config.ini (
+cd /d "%~dp0.."
+
+
+set ROOT=%cd%
+
+set CONFIG=%ROOT%\config.ini
+
+set ADB=%ROOT%\adb.exe
+
+
+
+:: =====================================
+:: 检查配置
+:: =====================================
+
+
+if not exist "%CONFIG%" (
+
+echo.
+
+echo =====================================
 
 echo.
 
 echo 未找到 config.ini
 
-echo 请先运行主程序保存电视IP
+echo.
+
+echo 请先运行 瞎折腾TV助手
+
+echo.
+
+echo =====================================
 
 pause
 
@@ -35,9 +59,30 @@ exit /b
 
 
 
-for /f "tokens=2 delims==" %%a in (config.ini) do (
+:: =====================================
+:: 读取配置
+:: =====================================
 
-set IP=%%a
+
+set IP=
+
+set PORT=
+
+
+
+for /f "tokens=1,* delims==" %%a in (%CONFIG%) do (
+
+    if /i "%%a"=="IP" set IP=%%b
+
+    if /i "%%a"=="PORT" set PORT=%%b
+
+)
+
+
+
+if "%PORT%"=="" (
+
+set PORT=5555
 
 )
 
@@ -63,7 +108,7 @@ echo       瞎折腾吧
 
 echo.
 
-echo    安卓电视恢复出厂助手 v2.0
+echo    安卓电视恢复出厂助手 v2.1
 
 echo.
 
@@ -72,9 +117,9 @@ echo =====================================
 
 echo.
 
-echo 当前电视IP：
+echo 当前电视：
 
-echo %IP%
+echo %IP%:%PORT%
 
 
 echo.
@@ -90,7 +135,7 @@ echo 正在连接电视...
 
 
 
-adb connect %IP%:5555 >nul
+"%ADB%" connect %IP%:%PORT% >nul 2>&1
 
 
 
@@ -98,25 +143,23 @@ timeout /t 3 >nul
 
 
 
-adb devices >adb_check.txt
+"%ADB%" devices >adb_check.txt
 
 
 
-findstr "%IP%" adb_check.txt | findstr "unauthorized" >nul
+findstr "%IP%:%PORT%" adb_check.txt | findstr "unauthorized" >nul
 
 
 
 if not errorlevel 1 (
 
-
 cls
-
 
 echo =====================================
 
 echo.
 
-echo ADB未授权
+echo          ADB未授权
 
 echo.
 
@@ -140,30 +183,25 @@ echo 始终允许此电脑
 
 pause
 
-
 goto START
-
 
 )
 
 
 
-
-findstr "%IP%" adb_check.txt | findstr "device" >nul
+findstr "%IP%:%PORT%" adb_check.txt | findstr "device" >nul
 
 
 
 if errorlevel 1 (
 
-
 cls
-
 
 echo =====================================
 
 echo.
 
-echo ADB连接失败
+echo          ADB连接失败
 
 echo.
 
@@ -180,19 +218,16 @@ echo 1.电视和电脑是否同一网络
 
 echo.
 
-echo 2.ADB调试是否开启
+echo 2.无线调试是否开启
 
 echo.
 
-echo 3.IP地址是否正确
-
+echo 3.IP和端口是否正确
 
 
 pause
 
-
 goto START
-
 
 )
 
@@ -208,7 +243,7 @@ echo =====================================
 
 echo.
 
-echo ADB连接成功
+echo          ADB连接成功
 
 echo.
 
@@ -217,7 +252,6 @@ echo =====================================
 
 
 timeout /t 2 >nul
-
 
 
 
@@ -233,7 +267,7 @@ set BRAND=
 
 
 
-for /f "delims=" %%a in ('adb shell getprop ro.product.model') do (
+for /f "delims=" %%a in ('"%ADB%" -s %IP%:%PORT% shell getprop ro.product.model') do (
 
 set MODEL=%%a
 
@@ -241,7 +275,7 @@ set MODEL=%%a
 
 
 
-for /f "delims=" %%a in ('adb shell getprop ro.product.brand') do (
+for /f "delims=" %%a in ('"%ADB%" -s %IP%:%PORT% shell getprop ro.product.brand') do (
 
 set BRAND=%%a
 
@@ -349,7 +383,7 @@ timeout /t 3 >nul
 
 
 
-adb reboot recovery
+"%ADB%" -s %IP%:%PORT% reboot recovery
 
 
 
@@ -375,9 +409,6 @@ pause
 
 
 goto EXIT
-
-
-
 
 
 

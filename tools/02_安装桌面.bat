@@ -1,39 +1,73 @@
 @echo off
-
-cd /d "%~dp0.."
-
+chcp 936 >nul
 setlocal EnableDelayedExpansion
 
-
-chcp 936 >nul
-
-
-title 瞎折腾吧 - 安卓电视桌面安装工具 v2.0
-
+title 瞎折腾吧 - 安卓电视桌面安装工具 v2.1
 
 color 0A
 
 
+:: =====================================
+:: 定位根目录
+:: =====================================
 
-if not exist Launcher mkdir Launcher
+cd /d "%~dp0.."
 
+set ROOT=%cd%
+
+set CONFIG=%ROOT%\config.ini
+
+set ADB=%ROOT%\adb.exe
+
+set LAUNCHER=%ROOT%\Launcher
 
 
 
 :: =====================================
-:: 读取IP
+:: 检查配置
 :: =====================================
 
+if not exist "%CONFIG%" (
 
-if not exist config.ini (
+echo.
+echo =====================================
+echo.
+echo          未找到 config.ini
+echo.
+echo       请先运行 瞎折腾TV助手
+echo.
+echo =====================================
+
+pause
+exit /b
+
+)
+
+
+
+:: =====================================
+:: 读取配置
+:: =====================================
+
+set IP=
+set PORT=
+
+
+for /f "tokens=1,* delims==" %%a in (%CONFIG%) do (
+
+    if /i "%%a"=="IP" set IP=%%b
+
+    if /i "%%a"=="PORT" set PORT=%%b
+
+)
+
+
+
+if "%IP%"=="" (
 
 echo.
 
-echo 未找到 config.ini
-
-echo.
-
-echo 请先运行主程序
+echo IP读取失败
 
 pause
 
@@ -42,15 +76,11 @@ exit /b
 )
 
 
+if "%PORT%"=="" (
 
-for /f "tokens=2 delims==" %%a in (config.ini) do (
-
-set IP=%%a
+set PORT=5555
 
 )
-
-
-
 
 
 
@@ -64,9 +94,9 @@ cls
 
 echo =====================================
 echo.
-echo        瞎折腾吧
+echo          瞎折腾吧
 echo.
-echo      桌面安装工具 v2.0
+echo       桌面安装工具 v2.1
 echo.
 echo =====================================
 
@@ -75,36 +105,46 @@ echo.
 
 echo 当前电视：
 
-echo %IP%
+echo %IP%:%PORT%
 
 
 echo.
-
 
 echo 正在连接电视...
 
 
 
-adb connect %IP%:5555 >nul
+"%ADB%" disconnect >nul 2>&1
 
+"%ADB%" connect %IP%:%PORT% >nul 2>&1
 
 timeout /t 3 >nul
 
 
 
-adb devices >adb_check.txt
+"%ADB%" devices >temp_adb.txt
 
 
 
-findstr "%IP%" adb_check.txt | findstr "device" >nul
+findstr "%IP%:%PORT%" temp_adb.txt | findstr "device" >nul
 
 
 
 if errorlevel 1 (
 
+del temp_adb.txt >nul 2>&1
+
 echo.
 
-echo ADB连接失败
+echo =====================================
+echo.
+echo          ADB连接失败
+echo.
+echo       本工具不支持独立使用
+echo.
+echo      请打开 瞎折腾TV助手
+echo.
+echo =====================================
 
 pause
 
@@ -113,14 +153,20 @@ exit /b
 )
 
 
+del temp_adb.txt >nul 2>&1
 
-del adb_check.txt >nul 2>&1
 
+
+echo.
+
+echo ADB连接成功！
+
+timeout /t 2 >nul
 
 
 
 :: =====================================
-:: 选择桌面
+:: 菜单
 :: =====================================
 
 
@@ -132,13 +178,11 @@ cls
 
 echo =====================================
 echo.
-echo          请选择桌面
+echo             请选择桌面
 echo.
 echo =====================================
 
-
 echo.
-
 
 echo 1. ATV Launcher
 
@@ -157,8 +201,6 @@ echo 4. Projectivy Launcher
 echo.
 
 echo 5. 不安装桌面
-
-
 
 echo.
 
@@ -179,92 +221,48 @@ if errorlevel 1 goto ATV
 
 
 
-
-
-
 :: =====================================
-:: ATV
+:: 桌面选择
 :: =====================================
 
 
 :ATV
 
+set PKG=ca.dstudio.atvlauncher.free
 
-set LAUNCHER_PKG=ca.dstudio.atvlauncher.free
-
-
-set APK=Launcher\ATV_Launcher.apk
-
+set APK=%LAUNCHER%\ATV_Launcher.apk
 
 goto INSTALL
 
-
-
-
-
-
-:: =====================================
-:: 当贝
-:: =====================================
 
 
 :DB
 
+set PKG=com.dangbei.tvlauncher
 
-set LAUNCHER_PKG=com.dangbei.tvlauncher
-
-
-set APK=Launcher\dbzm.apk
-
+set APK=%LAUNCHER%\dbzm.apk
 
 goto INSTALL
 
-
-
-
-
-
-:: =====================================
-:: Emotn
-:: =====================================
 
 
 :EMOTN
 
+set PKG=com.oversea.aslauncher
 
-set LAUNCHER_PKG=com.oversea.aslauncher
-
-
-set APK=Launcher\EmotnUI.apk
-
+set APK=%LAUNCHER%\EmotnUI.apk
 
 goto INSTALL
 
-
-
-
-
-
-:: =====================================
-:: Projectivy
-:: =====================================
 
 
 :PROJECTIVY
 
+set PKG=com.spocky.projengmenu
 
-set LAUNCHER_PKG=com.spocky.projengmenu
-
-
-set APK=Launcher\ProjectivyLaunche.apk
-
+set APK=%LAUNCHER%\ProjectivyLaunche.apk
 
 goto INSTALL
-
-
-
-
-
 
 
 
@@ -276,31 +274,29 @@ goto INSTALL
 :NO_LAUNCHER
 
 
-echo.
+cls
+
 
 echo =====================================
-
 echo.
-
-echo 警告：
-
+echo          不安装第三方桌面
 echo.
-
-echo 不安装第三方桌面
-
-echo 精简系统桌面后可能无法进入系统
-
-echo.
-
 echo =====================================
 
 
-choice /c 12 /n /m "是否继续？ 1继续 2返回"
+echo.
 
+echo 注意：
 
+echo.
 
-if errorlevel 2 goto MENU
+echo 如果后续精简系统桌面
 
+echo 可能导致无法进入系统
+
+echo.
+
+pause
 
 
 goto EXIT
@@ -308,17 +304,12 @@ goto EXIT
 
 
 
-
-
-
-
 :: =====================================
-:: 安装
+:: 安装桌面
 :: =====================================
 
 
 :INSTALL
-
 
 
 cls
@@ -328,6 +319,8 @@ echo =====================================
 echo.
 
 echo 正在安装：
+
+echo.
 
 echo %APK%
 
@@ -353,8 +346,7 @@ goto MENU
 
 
 
-
-adb install -r "%APK%"
+"%ADB%" -s %IP%:%PORT% install -r "%APK%"
 
 
 
@@ -377,40 +369,31 @@ echo.
 echo 安装完成！
 
 
-
-
-:: =====================================
-:: 设置默认桌面
-:: =====================================
-
-
 echo.
 
 echo 正在设置默认桌面...
 
 
-adb shell cmd package set-home-activity %LAUNCHER_PKG%
+
+"%ADB%" -s %IP%:%PORT% shell cmd package set-home-activity %PKG%
 
 
 
 echo.
-
 
 echo 当前HOME：
 
-
-adb shell cmd package resolve-activity --brief android.intent.action.MAIN android.intent.category.HOME
-
+"%ADB%" -s %IP%:%PORT% shell cmd package resolve-activity --brief android.intent.action.MAIN android.intent.category.HOME
 
 
 
 echo.
-
 
 echo 测试启动桌面...
 
 
-adb shell monkey -p %LAUNCHER_PKG% 1
+
+"%ADB%" -s %IP%:%PORT% shell monkey -p %PKG% 1
 
 
 
@@ -418,11 +401,9 @@ timeout /t 5 >nul
 
 
 
-
 echo.
 
 echo 桌面设置完成！
-
 
 pause
 
@@ -432,11 +413,8 @@ goto EXIT
 
 
 
-
-
-
 :: =====================================
-:: 返回
+:: 退出
 :: =====================================
 
 

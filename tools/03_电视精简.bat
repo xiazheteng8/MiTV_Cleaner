@@ -3,7 +3,7 @@ chcp 936 >nul
 setlocal EnableDelayedExpansion
 
 
-title 瞎折腾吧 - 安卓电视精简工具 v3.0
+title 瞎折腾吧 - 安卓电视精简工具 v2.1
 
 color 0A
 
@@ -67,7 +67,7 @@ echo =====================================
 echo.
 echo        瞎折腾吧
 echo.
-echo        安卓电视精简工具 v3.0
+echo        安卓电视精简工具 v2.1
 echo.
 echo =====================================
 
@@ -553,16 +553,16 @@ goto BACK
 
 set CLEAN_FILE=%~1
 
+
 :: ===============================
-:: 获取软件列表缓存
+:: 获取当前电视软件列表
 :: ===============================
 
 echo.
+
 echo 正在读取电视软件列表...
 
 adb shell pm list packages > "%ROOT%\installed_packages.txt"
-
-adb shell "echo ready" >nul
 
 echo 软件列表读取完成
 
@@ -794,7 +794,6 @@ echo 尝试用户层面卸载...
 
 
 
-timeout /t 1 >nul
 adb shell pm uninstall --user 0 %PKG% >result.txt 2>&1
 
 
